@@ -435,10 +435,6 @@ PRODUCT_BOOT_JARS += \
 # Trust
 PRODUCT_PACKAGES += \
     vendor.lineage.trust@1.0-service
-    
-# Thermal HAL
-PRODUCT_PACKAGES += \
-    android.hardware.thermal@2.0-service.pixel
 
 # USB
 PRODUCT_PACKAGES += \
