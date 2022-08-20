@@ -16,7 +16,6 @@ cc_binary {
     "utils/config_parser.cpp",
     "utils/thermal_files.cpp",
     "utils/thermal_watcher.cpp",
-    "utils/power_files.cpp",
   ],
   shared_libs: [
     "libbase",
@@ -24,12 +23,11 @@ cc_binary {
     "libhidlbase",
     "libjsoncpp",
     "libutils",
-    "libnl",
     "libbinder_ndk",
     "android.hardware.thermal@1.0",
     "android.hardware.thermal@2.0",
-    "android.hardware.power-V1-ndk_platform",
-    "pixel-power-ext-V1-ndk_platform"
+    "android.hardware.power-ndk_platform",
+    "pixel-power-ext-ndk_platform"
   ],
   cflags: [
     "-Wall",
@@ -45,14 +43,5 @@ cc_binary {
   ],
   tidy_flags: [
     "-warnings-as-errors=android-*,clang-analyzer-security*,cert-*"
-  ],
-}
-
-sh_binary {
-  name: "xiaomi_sm8150_thermal_symlinks",
-  src: "init.thermal.symlinks.sh",
-  vendor: true,
-  init_rc: [
-    "xiaomi_sm8150-thermal-symlinks.rc",
   ],
 }
